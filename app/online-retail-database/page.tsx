@@ -1,11 +1,44 @@
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 // import Link from 'next/link';
 // import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Button, Grid, GridCol, Group, Box } from '@mantine/core';
-// import styles from '../styles/Home.module.css';
-import { HeaderSimple } from '@/components/HeaderSimpleHome';
-import { IconExternalLink } from '@tabler/icons-react';
 
-export default function HomePage() {
+import { Button, Grid, GridCol, Group, Box, Typography } from '@mantine/core';
+// import styles from '../styles/Home.module.css';
+import { HeaderSimple } from '@/components/HeaderSimple';
+import { IconExternalLink } from '@tabler/icons-react';
+// import { getUsers } from '@/components/testget';
+// import { db } from '../../components/db';
+// // SELECT
+// pool.query<RowDataPacket[]>('SELECT 1 + 1 AS `test`;', (_err, rows) => {
+//   console.log(rows);
+//   /**
+//    * @rows: [ { test: 2 } ]
+//    */
+// });
+
+// console.log("bruh")      
+//                          
+import mysql from 'mysql2/promise';         
+
+const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Darker124@@@',
+    database: 'new_schema',
+  });
+
+  // query database
+const [rows, fields] = await connection.execute(
+  'SELECT * FROM `denormalized_orders` LIMIT 10',
+);
+console.warn('test the console');
+console.warn(rows);
+
+
+
+export default function HomePage() {                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+
   return (
     <>
       <div id='home-section'/>
@@ -18,18 +51,19 @@ export default function HomePage() {
           <GridCol span={{ base: 1, md: 5, lg: 5 }} />
           <GridCol span={{ base: 12, md: 2, lg: 2 }}>
             <h2 style={{ textAlign: 'center' }}>picture<br/>here</h2>
-            <br/><br/><br/>
+            <br/>
           </GridCol>
           <GridCol span={{ base: 1, md: 5, lg: 5 }} />
 
           <GridCol span={{ base: 12, md: 12, lg: 12 }}>
-            <h4><i>Hey, i'm Nyseer Couse</i></h4>
-            <h1>Full-Stack Software Developer</h1>
+            <h4><i>Online Retail Store</i></h4>
+            <h1>Database Design</h1>
           </GridCol>
           
           <GridCol span={{ base: 12, md: 4, lg: 4 }}/>
           <GridCol span={{ base: 12, md: 4, lg: 4 }}>
-            <h4>Here you can check out the projects I've worked on. Oh Wow!</h4>
+          <h3>description</h3>
+          {/* <Typography>`${rows}`</Typography> */}
           </GridCol>
           <GridCol span={{ base: 12, md: 4, lg: 4 }} />
 
@@ -56,7 +90,7 @@ export default function HomePage() {
 
             <GridCol span={{ base: 10, md: 3, lg: 3 }} />
               
-            <GridCol span={{ base: 10, md: 6, lg: 6 }}><h1>Featured Projects</h1>
+            <GridCol span={{ base: 10, md: 6, lg: 6 }}><h1>Overview:</h1>
             </GridCol> 
             
             <GridCol span={{ base: 10, md: 3, lg: 3 }} />
