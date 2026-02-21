@@ -32,15 +32,15 @@ const connection = await mysql.createConnection({
 const [rows, fields] = await connection.execute(
   'SELECT * FROM `denormalized_orders` LIMIT 1',
 );
-console.warn('test the console');
+// console.warn('test the console');
 
 // const data: string = JSON.stringify(rows[0].order_id);
 // console.warn(data);//
 
 //try this one
 const temp: string = JSON.parse(JSON.stringify(rows));
-console.warn(rows[0]);
-console.warn("test order id's row: " + rows.order_id);
+// console.warn(rows[0]);
+// console.warn("test order id's row: " + rows.order_id);
 // const data = [];
 // console.warn(data);
 
