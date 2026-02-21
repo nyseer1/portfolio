@@ -40,7 +40,7 @@ console.warn('test the console');
 //try this one
 const temp: string = JSON.parse(JSON.stringify(rows));
 console.warn(rows[0]);
-console.warn("test order id's row: " + rows[0].order_id);
+console.warn("test order id's row: " + rows.order_id);
 // const data = [];
 // console.warn(data);
 
