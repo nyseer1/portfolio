@@ -1,5 +1,5 @@
 // // import awsCaBundle from 'aws-ssl-profiles'; //for azure sql cloud servers 
-// import mysql, { PoolOptions } from 'mysql2';
+ import mysql, { PoolOptions } from 'mysql2';
 
 // // Create the connection pool. The pool-specific settings are the defaults
 // const access: PoolOptions = {
