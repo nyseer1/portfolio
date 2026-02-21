@@ -20,29 +20,29 @@ import { IconExternalLink } from '@tabler/icons-react';
 //                          
 import mysql from 'mysql2/promise';         
 
-const connection = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Darker124@@@',
-    database: 'new_schema',
-    // rowsAsArray: true,
-  });
+// const connection = await mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'Darker124@@@',
+//     database: 'new_schema',
+//     // rowsAsArray: true,
+//   });
 
-  // query database
-const [rows, fields] = await connection.execute(
-  'SELECT * FROM `denormalized_orders` LIMIT 1',
-);
-// console.warn('test the console');
+//   // query database
+// const [rows, fields] = await connection.execute(
+//   'SELECT * FROM `denormalized_orders` LIMIT 1',
+// );
+// // console.warn('test the console');
 
-// const data: string = JSON.stringify(rows[0].order_id);
-// console.warn(data);//
+// // const data: string = JSON.stringify(rows[0].order_id);
+// // console.warn(data);//
 
-//try this one
-const temp: string = JSON.parse(JSON.stringify(rows));
-// console.warn(rows[0]);
-// console.warn("test order id's row: " + rows.order_id);
-// const data = [];
-// console.warn(data);
+// //try this one
+// const temp: string = JSON.parse(JSON.stringify(rows));
+// // console.warn(rows[0]);
+// // console.warn("test order id's row: " + rows.order_id);
+// // const data = [];
+// // console.warn(data);
 
 // rows.forEach((user) => {
 //     console.log('-----------');
